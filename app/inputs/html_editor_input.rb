@@ -27,10 +27,21 @@ class HtmlEditorInput < Formtastic::Inputs::TextInput
       </div>
       
       <div data-wysihtml5-dialog="insertImage" style="display: none">
-        <label>
-          Image:
-          <input data-wysihtml5-dialog-field="src" value="http://">
-        </label>
+        <div class="tabs">
+          <ul>
+            <li><a href="##{input_html_options[:id]}-simple-insert">Simple</a></li>
+            <li><a href="##{input_html_options[:id]}-advanced-insert" data-load-assets="true">Advanced</a></li>
+          </ul>
+          <div id="#{input_html_options[:id]}-simple-insert" class="simple_insert">
+            <label>
+              Image:
+              <input data-wysihtml5-dialog-field="src" value="http://">
+            </label>
+          </div>
+          <div id="#{input_html_options[:id]}-advanced-insert" class="advanced_insert">
+            hello
+          </div>
+        </div>
         <label>
           Align:
           <select data-wysihtml5-dialog-field="className">
