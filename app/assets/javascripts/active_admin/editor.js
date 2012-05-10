@@ -20,5 +20,19 @@
 
             window.editor = editor;
         }
+
+        active_admin_editor.each(function() {
+            tab_container = $(this).find('.tabs');
+            tab_nav = tab_container.find('ul');
+            tab_content = tab_container.find(' > div').hide();
+            tab_content.first().show();
+
+            tab_nav.find('a').click(function(e) {
+                e.preventDefault();
+                id = $(this).attr('href');
+                tab_content.hide();
+                $(id).show();
+            });
+        });
     });
 })(jQuery);

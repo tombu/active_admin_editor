@@ -6,5 +6,12 @@
 
             container.find('.advanced_insert').load('/admin/assets.js');
         });
+
+        $('[data-load-assets-new=true]').click(function(e) {
+            e.preventDefault();
+            container = $(this).closest('.active_admin_editor_toolbar');
+
+            container.find('.upload_insert').load('/admin/assets/new.js');
+        });
     });
 })(jQuery);

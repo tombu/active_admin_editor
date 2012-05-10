@@ -18,7 +18,7 @@ class HtmlEditorInput < Formtastic::Inputs::TextInput
       <div data-wysihtml5-dialog="createLink" style="display: none">
         <label>
           Link:
-          <input data-wysihtml5-dialog-field="href" value="http://">
+          <input type="text" data-wysihtml5-dialog-field="href" value="http://">
         </label>
         <div class="action-group">
           <a data-wysihtml5-dialog-action="save" class="button">OK</a>
@@ -30,16 +30,18 @@ class HtmlEditorInput < Formtastic::Inputs::TextInput
         <div class="tabs">
           <ul>
             <li><a href="##{input_html_options[:id]}-simple-insert">Simple</a></li>
-            <li><a href="##{input_html_options[:id]}-advanced-insert" data-load-assets="true">Advanced</a></li>
+            <li><a href="##{input_html_options[:id]}-advanced-insert" data-load-assets="true">Library</a></li>
+            <li><a href="##{input_html_options[:id]}-upload" data-load-assets-new="true">Upload</a></li>
           </ul>
           <div id="#{input_html_options[:id]}-simple-insert" class="simple_insert">
             <label>
               Image:
-              <input data-wysihtml5-dialog-field="src" value="http://">
+              <input type="text" data-wysihtml5-dialog-field="src" value="http://">
             </label>
           </div>
           <div id="#{input_html_options[:id]}-advanced-insert" class="advanced_insert">
-            hello
+          </div>
+          <div id="#{input_html_options[:id]}-upload" class="upload_insert">
           </div>
         </div>
         <label>

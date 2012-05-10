@@ -6,6 +6,11 @@ class Admin::AssetsController < ApplicationController
     respond_with @assets
   end
 
+  def new
+    @asset = ActiveAdmin::Asset.new
+    respond_with @asset
+  end
+
   def create
     @asset = ActiveAdmin::Asset.new(params[:asset])
     if @asset.save
